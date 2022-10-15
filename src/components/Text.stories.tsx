@@ -4,7 +4,10 @@ import { Text, TextProps } from "./Text";
 export default {
   title: "Components/Text",
   component: Text,
-  args: { children: "Lorem ipsum", size: "md" },
+  args: {
+    children: "Lorem ipsum.",
+    size: "md",
+  },
   argTypes: {
     size: {
       options: ["sm", "md", "lg"],
@@ -16,11 +19,24 @@ export default {
 } as Meta<TextProps>;
 
 export const Default: StoryObj<TextProps> = {};
-export const Small: StoryObj<TextProps> = { args: { size: "sm" } };
-export const Large: StoryObj<TextProps> = { args: { size: "lg" } };
+
+export const Small: StoryObj<TextProps> = {
+  args: {
+    size: "sm",
+  },
+};
+
+export const Large: StoryObj<TextProps> = {
+  args: {
+    size: "lg",
+  },
+};
 
 export const CustomComponent: StoryObj<TextProps> = {
-  args: { asChild: true, children: <p>My awesome paragraph. Wait, what?</p> },
+  args: {
+    asChild: true,
+    children: <p>Text with P tag</p>,
+  },
   argTypes: {
     children: {
       table: {
